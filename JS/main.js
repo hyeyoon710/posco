@@ -79,30 +79,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//ScrollTrigger
-
-// let newsLeft = document.querySelector('.news_left')
-// let heightNewsLeft = newsLeft.offsetHeight;
-// console.log('Height of .news_left:', heightNewsLeft);
-// gsap.registerPlugin(ScrollTrigger);
-
-// gsap.to('.news_left', {
-//   scrollTrigger: {
-//     trigger: '.news_left',
-//     start: 'top 110px',
-//     // end : 'bottom bottom',
-//     end : `${heightNewsLeft}px`,
-//     pin: true,
-//     scrub: true,
-//     markers :true
-
-//   }
-// });
 
 window.addEventListener('load', () => {
   let newsRight = document.querySelector('.news_right');
   let heightNewsRight = newsRight.offsetHeight;
-  console.log('Height of .news_left:', heightNewsRight);
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -111,8 +91,6 @@ window.addEventListener('load', () => {
       trigger: '.news_left',
       start: 'top 110px',
       end : `+=${heightNewsRight}`,
-      // end : 'bottom top',
-      // end: '+=2000',
       pin: true,
       scrub: true,
       // markers: true,
@@ -120,10 +98,9 @@ window.addEventListener('load', () => {
   });
 });
 
-
 // $(document).ready(function() {
-//   var imgWidth = $('.news_txt img').width();  // 너비 가져오기
-//   var imgHeight = $('.news_txt img').height();  // 높이 가져오기
+  //   var imgWidth = $('.news_txt img').width();  // 너비 가져오기
+  //   var imgHeight = $('.news_txt img').height();  // 높이 가져오기
 
 //   console.log("이미지의 너비: " + imgWidth + "px"); //384.125px
 //   console.log("이미지의 높이: " + imgHeight + "px"); //433px
