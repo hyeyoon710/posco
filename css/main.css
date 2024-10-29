@@ -106,12 +106,34 @@ header .search {font-size: 18px;}
 .master_wrapper .master_btns button:nth-child(2) {opacity: 0.5;}
 .master_wrapper .master_btns button:nth-child(3) {opacity: 0.5;}
 .master_wrapper .main_swiper {width: 100vw;height: 100vh;}
-.master_wrapper .master_btns button.active {opacity: 1; /* 활성화된 버튼 */}
-.master_wrapper .content_wrap > div {display: none; /* 기본적으로 모든 콘텐츠 숨김 */}
-.master_wrapper .content_wrap > div.active {display: block; /* 활성화된 콘텐츠만 보이도록 */}
+.master_wrapper .master_btns button.active {opacity: 1;}
+.master_wrapper .content_wrap>div {display: none;}
+.master_wrapper .content_wrap>div.active {display: block;}
 .master_wrapper .swiper-slide>img {width: 100%;height: 100%;object-fit: cover;}
-.master_wrapper .main_txt_wrap {position: absolute;top: 50%;right: 50px;transform: translateY(-50%);z-index: 10;background: pink;}
-
+.master_wrapper .main_txt_wrap {
+  display: flex;flex-direction: column;
+  justify-content: center;align-items: center;
+  position: absolute;top: 50%;right: 100px;
+  transform: translateY(-50%);z-index: 10;
+  background: #fff;color: #000;
+  opacity: 0.9;width: 325px;height: 300px;
+  border-radius: 20px;
+}
+.master_wrapper .main_txt_wrap strong {
+  padding: 0 10px 15px 10px;
+  font-size: 20px;font-weight: 700;line-height: 1.5em;
+}
+.master_wrapper .main_txt_wrap .txt_wrap {
+  display: flex;flex-direction: column;justify-content: flex-start;
+  gap: 10px;padding: 15px;
+}
+.master_wrapper .main_txt_wrap .line {
+  border: 1px solid rgba(0,0,0,0.2);width: 300px;
+}
+.master_wrapper .main_txt_wrap button {
+  border-radius: 50px;padding: 10px;
+  border: 1px solid #000;width: 100px;
+}
 @media screen and (max-width: 1200px) {
   .master_wrapper .master_btns {font-size: 45px;left: 30px;}
   .master_wrapper .main_txt_wrap {right: 30px;}
