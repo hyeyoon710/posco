@@ -187,9 +187,8 @@ header .search {font-size: 18px;}
   .esg_wrapper .esg_wrap .esg_text_wrap p {font-size: 16px;}
 }
 @media screen and (max-width: 500px) {
-  .esg_wrapper .esg_wrap .env .esg_text_wrap strong {font-size: 30px;margin-left: 100px;}
-  .esg_wrapper .esg_wrap .sc .esg_text_wrap strong {font-size: 30px;margin-left: 170px;}
-  .esg_wrapper .esg_wrap .gov .esg_text_wrap strong {font-size: 30px;margin-left: 130px;}
+  .esg_wrapper .esg_wrap .esg_text_wrap strong {font-size: 30px;}
+
   .esg_wrapper .esg_list .btn_1 {align-self: center;}
 
 }
