@@ -107,34 +107,15 @@ ScrollTrigger.matchMedia({
 
 	"(min-width: 1200px)": function() {
     gsap.to('.news_left', {
-          scrollTrigger: {
-            trigger: '.news_left',
-            start: 'top 110px',
-            end : `+=${heightNewsRight}`,
-            pin: true,
-            scrub: true,
-          }
-        });
+      scrollTrigger: {
+        trigger: '.news_left',
+        start: 'top 110px',
+        end : `+=${heightNewsRight}`,
+        pin: true,
+        scrub: true,
+      }
+    });
   },
-
-	"(min-width: 800px)": function() {
-    gsap.to('.news_left', {
-          scrollTrigger: {
-            trigger: '.news_left',
-            start: 'top 110px',
-            end : `+=${heightNewsRight}`,
-            pin: true,
-            scrub: true,
-          }
-        });
-  },
-
-	"(max-width: 899px)": function() {
-
-  },
-
-	"all": function() {
-  }
 
 });
 
