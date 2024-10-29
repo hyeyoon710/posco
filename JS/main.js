@@ -5,13 +5,20 @@ $(window).on('scroll', function() {
     $('header').removeClass('fixed');
   }
 })
+
 let headerBg = $('.dep2').innerHeight() + 50
   $('#gnb .dep1>li').hover(function(){
-    $('.dep2').stop().slideDown()
+  $('.dep2').stop().slideDown()
+  $('header').css('background' , '#fff')
+  $('header #gnb .dep1').css('color' , '#000')
+  $('header .header_util').css('color' , '#000')
   $('header').append(`<div class='header_bg'></div>`)
   $('.header_bg').stop().animate({'height': headerBg})
 },function(){
   $('.dep2').stop().slideUp()
+  $('header').css('background' , 'none')
+  $('header #gnb .dep1').css('color' , '#fff')
+  $('header .header_util').css('color' , '#fff')
   $('.header_bg').stop().animate({'height': 0}, function() {
     $(this).remove()
   })
@@ -79,24 +86,58 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-window.addEventListener('load', () => {
+// window.addEventListener('load', () => {
   let newsRight = document.querySelector('.news_right');
   let heightNewsRight = newsRight.offsetHeight;
 
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to('.news_left', {
-    scrollTrigger: {
-      trigger: '.news_left',
-      start: 'top 110px',
-      end : `+=${heightNewsRight}`,
-      pin: true,
-      scrub: true,
-      // markers: true,
-    }
-  });
+//   gsap.to('.news_left', {
+//     scrollTrigger: {
+//       trigger: '.news_left',
+//       start: 'top 110px',
+//       end : `+=${heightNewsRight}`,
+//       pin: true,
+//       scrub: true,
+//     }
+//   });
+// });
+
+ScrollTrigger.matchMedia({
+
+	"(min-width: 1200px)": function() {
+    gsap.to('.news_left', {
+          scrollTrigger: {
+            trigger: '.news_left',
+            start: 'top 110px',
+            end : `+=${heightNewsRight}`,
+            pin: true,
+            scrub: true,
+          }
+        });
+  },
+
+	"(min-width: 800px)": function() {
+    gsap.to('.news_left', {
+          scrollTrigger: {
+            trigger: '.news_left',
+            start: 'top 110px',
+            end : `+=${heightNewsRight}`,
+            pin: true,
+            scrub: true,
+          }
+        });
+  },
+
+	"(max-width: 899px)": function() {
+
+  },
+
+	"all": function() {
+  }
+
 });
+
 
 // $(document).ready(function() {
   //   var imgWidth = $('.news_txt img').width();  // 너비 가져오기
