@@ -17,6 +17,7 @@ header #gnb .dep1 {display: flex;color: #fff;}
 header #gnb .dep1>li {position: relative;display: flex;text-align: center;height: 110px;}
 header #gnb .dep1>li>a {display: flex;justify-content: center;align-items: center;height: 100%;width: 160px;}
 header #gnb .dep2 {
+  display: none;
   flex-direction: column;color: #000;
   position: absolute;top: 110px;left: 70%;transform: translateX(-70%);
   width: 100%;height: 250px;margin-top: 30px;
@@ -151,7 +152,7 @@ header .search {font-size: 18px;}
   }
   .master_wrapper .main_txt_wrap {
     position: absolute;right: 100px;top: 500px;
-    width: 300px;height: 300px;
+    width: 300px;height: 300px;margin-left: 50px;
   }
   .master_wrapper .main_txt_wrap strong {font-size: 18px;}
   .master_wrapper .main_txt_wrap .txt_wrap {gap: 8px;padding: 10px;font-size: 16px;}
