@@ -99,8 +99,6 @@ header .search {font-size: 18px;}
   .icon_wrap img {width: 60px; height: 60px;}
 }
 
-
-
 .master_wrapper {position: relative;color: #fff;height: 100vh;}
 .master_wrapper .master_btns {display: flex;flex-direction: column;align-items: flex-start; position: absolute;top: 20%;left: 50px;transform: translateY(-20%);gap: 10px;z-index: 10;font-size: 55px;font-weight: 700;}
 .master_wrapper .master_btns button:nth-child(2) {opacity: 0.5;}
@@ -114,22 +112,21 @@ header .search {font-size: 18px;}
   display: flex;flex-direction: column;
   justify-content: center;align-items: center;
   position: absolute;top: 50%;right: 100px;
-  transform: translateY(-50%);z-index: 10;
+  transform: translateY(-50%);
   background: #fff;color: #000;
-  opacity: 0.9;width: 325px;height: 300px;
+  opacity: 0.9;width: 325px;height: 350px;
   border-radius: 20px;
 }
 .master_wrapper .main_txt_wrap strong {
   padding: 0 10px 15px 10px;
-  font-size: 20px;font-weight: 700;line-height: 1.5em;
+  font-size: 23px;font-weight: 700;line-height: 1.5em;
 }
+.master_wrapper .main_txt_wrap .s1 {padding: 10px;}
 .master_wrapper .main_txt_wrap .txt_wrap {
   display: flex;flex-direction: column;justify-content: flex-start;
-  gap: 10px;padding: 15px;
+  gap: 10px;padding: 15px;font-size: 18px;
 }
-.master_wrapper .main_txt_wrap .line {
-  border: 1px solid rgba(0,0,0,0.2);width: 300px;
-}
+.master_wrapper .main_txt_wrap .line {border: 1px solid rgba(0,0,0,0.2);width: 300px;}
 .master_wrapper .main_txt_wrap button {
   border-radius: 50px;padding: 10px;
   border: 1px solid #000;width: 100px;
@@ -144,13 +141,29 @@ header .search {font-size: 18px;}
     display: flex;flex-direction: column;align-items: flex-start;
     font-size: 40px;left: 20px;
   }
+  .master_wrapper .main_txt_wrap {
+    position: absolute;top: 50%;right: 80px;
+    width: 320px;height: 320px;
+  }
+  .master_wrapper .main_txt_wrap strong {font-size: 20px;}
+  .master_wrapper .main_txt_wrap .txt_wrap {gap: 9px;padding: 12px;font-size: 17px;}
+  .master_wrapper .main_txt_wrap .line {width: 280px;}
+  .master_wrapper .main_txt_wrap button {padding: 9px;}
 }
 
 @media screen and (max-width: 500px) {
   .master_wrapper .master_btns {
     display: flex; flex-direction: column;align-items: flex-start;
-    font-size: 30px;
+    font-size: 35px;
   }
+  .master_wrapper .main_txt_wrap {
+    position: absolute;right: 100px;top: 700px;
+    width: 300px;height: 300px;
+  }
+  .master_wrapper .main_txt_wrap strong {font-size: 18px;}
+  .master_wrapper .main_txt_wrap .txt_wrap {gap: 8px;padding: 10px;font-size: 16px;}
+  .master_wrapper .main_txt_wrap .line {width: 250px;}
+  .master_wrapper .main_txt_wrap button {padding: 8px;}
 }
 
 @keyframes flow {from {transform: translateX(0);} to {transform: translateX(-100%);}}
