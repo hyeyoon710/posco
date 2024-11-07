@@ -1,23 +1,41 @@
+let lastScrollTop = 0;
 $(window).on('scroll', function() {
-  if ($(window).scrollTop() > 110) { // 스크롤이 100px 이상 내려가면
-    $('header').addClass('fixed');
+  let currentScrollTop = $(this).scrollTop(); // 현재 스크롤 위치
+
+  if (currentScrollTop > 110) {
+
+    if (currentScrollTop > lastScrollTop) {
+      // 아래로 스크롤 중이면 헤더 숨기기
+      if (!$('header').is(':animated')) { // 애니메이션 중첩 방지
+        $('header').removeClass('fixed').slideUp();
+      }
+    } else {
+      // 위로 스크롤 중이면 헤더 보이기
+      if (!$('header').is(':animated')) {
+        $('header').addClass('fixed').slideDown();
+        $('.dep1>li, .header_util').css('color', '#000');
+      }
+    }
   } else {
-    $('header').removeClass('fixed');
+    // 스크롤이 110px 이하일 때는 헤더가 보임
+    $('header').removeClass('fixed').slideDown();
+    $('.dep1>li, .header_util').css('color', '#fff');
   }
-})
+  lastScrollTop = currentScrollTop; // 이전 스크롤 위치 업데이트
+});
 
 let headerBg = $('.dep2').innerHeight() + 50
-  $('#gnb .dep1>li').hover(function(){
+$('#gnb .dep1>li').hover(function(){
   $('.dep2').stop().slideDown()
   $('header').css('background' , '#fff')
-  $('header #gnb .dep1').css('color' , '#000')
+  $('header #gnb .dep1>li').css('color' , '#000')
   $('header .header_util').css('color' , '#000')
   $('header').append(`<div class='header_bg'></div>`)
   $('.header_bg').stop().animate({'height': headerBg})
 },function(){
   $('.dep2').stop().slideUp()
   $('header').css('background' , 'none')
-  $('header #gnb .dep1').css('color' , '#fff')
+  $('header #gnb .dep1>li').css('color' , '#fff')
   $('header .header_util').css('color' , '#fff')
   $('.header_bg').stop().animate({'height': 0}, function() {
     $(this).remove()
@@ -86,22 +104,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// window.addEventListener('load', () => {
   let newsRight = document.querySelector('.news_right');
   let heightNewsRight = newsRight.offsetHeight;
 
   gsap.registerPlugin(ScrollTrigger);
 
-//   gsap.to('.news_left', {
-//     scrollTrigger: {
-//       trigger: '.news_left',
-//       start: 'top 110px',
-//       end : `+=${heightNewsRight}`,
-//       pin: true,
-//       scrub: true,
-//     }
-//   });
-// });
 
 ScrollTrigger.matchMedia({
 
@@ -116,14 +123,4 @@ ScrollTrigger.matchMedia({
       }
     });
   },
-
 });
-
-
-// $(document).ready(function() {
-  //   var imgWidth = $('.news_txt img').width();  // 너비 가져오기
-  //   var imgHeight = $('.news_txt img').height();  // 높이 가져오기
-
-//   console.log("이미지의 너비: " + imgWidth + "px"); //384.125px
-//   console.log("이미지의 높이: " + imgHeight + "px"); //433px
-// });
