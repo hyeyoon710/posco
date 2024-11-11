@@ -127,6 +127,7 @@ header .search {font-size: 18px;}
   border-radius: 50px;padding: 10px;
   border: 1px solid #000;width: 100px;
 }
+.master_wrapper .main_txt_wrap button:hover {background: #000;color: #fff;}
 @media screen and (max-width: 1200px) {
   .master_wrapper .master_btns {font-size: 45px;left: 30px;}
   .master_wrapper .main_txt_wrap {right: 30px;}
@@ -199,12 +200,9 @@ header .search {font-size: 18px;}
   .esg_wrapper .esg_list span {display: none;}
   .esg_wrapper .esg_wrap .color::after {
     content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;top: 0;left: 0;
+    width: 100%;height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
     z-index: 1;
   }
 }
